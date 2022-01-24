@@ -1,8 +1,22 @@
 #include "tecnicofs_client_api.h"
+#include <string.h>
 
 int tfs_mount(char const *client_pipe_path, char const *server_pipe_path) {
-    /* TODO: Implement this */
-    return -1;
+    int fd;
+    unlink(client_pipe_path);
+    if((fd = open(server_pipe_path, TFS_OP_CODE_WRITE)) == -1)
+        return -1;
+
+    if(mkfifo(client_pipe_path, 0777) < 0)
+        return -1;
+
+    if(write(fd, TFS_OP_CODE_MOUNT, sizeof(char)) == -1)
+        return -1;
+
+    if(write(fd, client_pipe_path, strlen(client_pipe_path)) == -1)
+        return -1;
+    
+    return 0;
 }
 
 int tfs_unmount() {

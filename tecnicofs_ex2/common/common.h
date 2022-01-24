@@ -8,7 +8,7 @@ enum {
     TFS_O_APPEND = 0b100,
 };
 
-/* operation codes (for client-server requests) 
+// operation codes (for client-server requests) 
 enum {
     TFS_OP_CODE_MOUNT = 1,
     TFS_OP_CODE_UNMOUNT = 2,
@@ -18,5 +18,5 @@ enum {
     TFS_OP_CODE_READ = 6,
     TFS_OP_CODE_SHUTDOWN_AFTER_ALL_CLOSED = 7
 };
-*/
+
 #endif /* COMMON_H */
