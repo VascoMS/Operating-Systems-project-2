@@ -10,7 +10,7 @@
 #define MAX_OPEN_FILES (20)
 #define MAX_FILE_NAME (40)
 #define MAX_CLIENTS (1)
-#define PIPENAME_SIZE (40)
+
 
 #define DELAY (5000)
 

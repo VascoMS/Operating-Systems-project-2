@@ -8,6 +8,15 @@
 #include <sys/types.h>
 
 /*
+ * Session entry
+ */
+typedef struct {
+    int id;
+    char const *client_pipe;
+} session_entry;
+
+
+/*
  * Directory entry
  */
 typedef struct {

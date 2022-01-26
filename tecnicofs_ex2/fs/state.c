@@ -9,8 +9,6 @@
 /* Persistent FS state  (in reality, it should be maintained in secondary
  * memory; for simplicity, this project maintains it in primary memory) */
 
-/* Session Ids */
-
 
 /* I-node table */
 static inode_t inode_table[INODE_TABLE_SIZE];
@@ -69,6 +67,7 @@ static void insert_delay() {
  * Initializes FS state
  */
 void state_init() {
+
     for (size_t i = 0; i < INODE_TABLE_SIZE; i++) {
         freeinode_ts[i] = FREE;
     }

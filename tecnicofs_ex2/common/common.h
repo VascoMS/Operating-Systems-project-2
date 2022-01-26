@@ -1,6 +1,9 @@
 #ifndef COMMON_H
 #define COMMON_H
 
+#define MAX_PIPENAME_SIZE (40)
+#define OPCODE_MESSAGE_SIZE (2)
+
 /* tfs_open flags */
 enum {
     TFS_O_CREAT = 0b001,
